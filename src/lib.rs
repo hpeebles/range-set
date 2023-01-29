@@ -458,6 +458,10 @@ impl <A, T> RangeSet <A> where
     }
   }
 
+  pub fn ranges(&self) -> std::slice::Iter<std::ops::RangeInclusive<T>> {
+    self.ranges.iter()
+  }
+
   /// Tests a raw smallvec of ranges for validity as a range set: the element
   /// ranges must be properly disjoint (not adjacent) and sorted.
   ///
